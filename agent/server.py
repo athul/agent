@@ -94,6 +94,7 @@ class Server(Base):
             bench.generate_supervisor_config()
         bench.deploy()
         bench.setup_nginx()
+        self.docker_logout(registry)
 
     def container_exists(self, name: str):
         """
